@@ -179,8 +179,8 @@ namespace teknofest.Controllers
                  
                         selectedRoles = selectedRoles ?? new string[] { };
 
-                        await _userManager.AddToRolesAsync(user, selectedRoles.Except(userRoles).ToArray<string>());
-                        await _userManager.RemoveFromRolesAsync(user, userRoles.Except(selectedRoles).ToArray<string>());
+                        //await _userManager.AddToRolesAsync(user, selectedRoles.Except(userRoles).ToArray<string>());
+                        //await _userManager.RemoveFromRolesAsync(user, userRoles.Except(selectedRoles).ToArray<string>());
                         return View("UserList");
 
 
