@@ -1,0 +1,120 @@
+﻿@model FoodCategoryModel
+
+@{
+    ViewData["Title"] = "EditFoodCategory";
+}
+
+<h1>EditFoodCategory</h1>
+
+<h4>FoodCategory</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditFoodCategory" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FoodCategoryId" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Url" class="control-label"></label>
+                <input asp-for="Url" class="form-control" />
+                <span asp-validation-for="Url" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="imageUrl" class="control-label"></label>
+                <input asp-for="imageUrl" class="form-control" />
+                <span asp-validation-for="imageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+
+            @*@for (int i = 0; i < Model.foods.Count; i++)
+            {
+                <input type="hidden" name = "foods[@i].Id" value="@Model.foods[i]." />
+            }*@
+
+        </form>
+    </div>
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-12">
+                
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td style="width : 30px;">Id</td>
+                            <td style="width : 60px">Image</td>
+                            <td style="width:20px;">Name</td>
+                            <td style="width:20px;">Price</td>
+
+                            <td style="width:20px;">Onaylı</td>
+                            <td style="width : 135px;"></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.foods.Count > 0)
+                        {
+                            @foreach (var item in Model.foods)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td><img style="width : 60px" src="~/img/@item.imageUrl" /></td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Price</td>
+
+                                    <td>
+                                        @if (item.isApproved)
+                                        {
+                                            <i class="fas fa-check-circle"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="fas fa-times-circle"></i>
+                                        }
+                                    </td>
+
+                                    <td>
+                                        <a href="/admin/EditFood/@item.Id" class="btn btn-primary btn-sm mr-2">Edit</a>
+
+                                        
+
+
+
+                                    </td>
+
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td class="alert alert-warning" colspan="5">
+                                    <h3>No Products</h3>
+                                </td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="FoodCategoryList">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

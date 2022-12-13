@@ -1,0 +1,19 @@
+﻿@model FoodCategory
+<partial name="_header" />
+
+
+
+<div class="row">
+
+    <div class="col-md-12">
+        <div class="row">
+            @foreach (var food in Model.Foods)
+            {
+                <div class="col-md-4 col-sm-2">
+                    @await Html.PartialAsync("_FoodView", food);
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

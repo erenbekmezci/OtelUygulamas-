@@ -1,0 +1,15 @@
+﻿@model FoodCategory
+
+<div class="card mb-2">
+    <img class="card-img-top" src="~/img/@Model.imageUrl" alt="">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <span>@Model.Description</span>
+    </div>
+    <div class="card-footer text-center">
+        <a asp-controller="Menu" asp-action="Details" asp-route-url="@Model.Url" class="btn btn-primary btn-sm">Menüyü İncele</a>
+
+
+    </div>
+</div>   
+

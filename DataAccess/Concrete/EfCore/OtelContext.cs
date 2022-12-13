@@ -1,0 +1,21 @@
+﻿using Entities;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DataAccess.Concrete.EfCore
+{
+    public class OtelContext : DbContext
+    {
+        public DbSet<Food> Foods { get; set; }
+        public DbSet<FoodCategory> FoodCategories { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseNpgsql("Host=localhost;Database=OtelApp;Username=postgres;Password=kardelen67");
+        }
+    }
+}

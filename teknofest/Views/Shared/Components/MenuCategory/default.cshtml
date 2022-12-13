@@ -1,0 +1,9 @@
+﻿@model List<FoodCategory>
+
+
+	@foreach (var item in Model)
+	{
+		 
+		<li><a class="dropdown-item @(ViewBag.SelectedCategory == item.Url ? "active" : "")" href="/@item.Url">@item.Name</a></li>
+				
+	}

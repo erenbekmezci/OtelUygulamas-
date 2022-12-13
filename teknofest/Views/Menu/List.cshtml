@@ -1,0 +1,24 @@
+﻿@model FoodCategoryList
+<partial name="_header" />
+
+
+@if (Model.FoodCategories.Count == 0)
+{
+    @await Html.PartialAsync("_noMenu")
+}
+else
+{
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="row">
+                @foreach (var FoodCategory in Model.FoodCategories)
+                {
+                    <div class="col-md-4 col-sm-2">
+                        @await Html.PartialAsync("_FoodCategoryView", FoodCategory);
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
