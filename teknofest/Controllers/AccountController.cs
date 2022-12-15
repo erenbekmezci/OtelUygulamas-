@@ -176,7 +176,7 @@ namespace teknofest.Controllers
 
             if(user == null)
             {
-                ModelState.AddModelError("", "Bu e - posta adresine ait kullanıcı bulunamadı !");
+                ModelState.AddModelError("", "Bu e - posta adresine ait kullanıcı bulunamadı!");
                 return View();
             }
 
