@@ -174,6 +174,7 @@ namespace teknofest.Controllers
             }
             var user = await _userManager.FindByEmailAsync(model.Email);
 
+
             if(user == null)
             {
                 ModelState.AddModelError("", "Bu e - posta adresine ait kullanıcı bulunamadı!");
