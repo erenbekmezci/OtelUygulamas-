@@ -8,6 +8,8 @@ using teknofest.Identity;
 using Microsoft.AspNetCore.Hosting;
 using System.Configuration;
 using ShopApp.webui.EmailServices;
+using Business.Abstract;
+using Business.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -49,7 +51,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     //options.User.AllowedUserNameCharacters =
     //"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
     options.User.RequireUniqueEmail = true;
-    options.SignIn.RequireConfirmedEmail = true;
+    options.SignIn.RequireConfirmedEmail = false; // üyelik onaylanmasý projenin ilk aþamalarý için(web ödevi için önemli deðil teknofest için true olucak)
     options.SignIn.RequireConfirmedPhoneNumber = false;
 });
 
@@ -71,6 +73,10 @@ builder.Services.ConfigureApplicationCookie(options =>
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IFoodDal, EfCoreFoodDal>();
 builder.Services.AddScoped<IFoodCategoryDal , EfCoreFoodCategoryDal>();
+builder.Services.AddScoped<ICartDal , EfCoreCartDal>();
+
+
+builder.Services.AddScoped<ICartService , CartManager>();
 
 builder.Services.AddScoped<IEmailSender, SmtpEmailSender>(i=>
     new SmtpEmailSender(Configuration["EmailSender:Host"],

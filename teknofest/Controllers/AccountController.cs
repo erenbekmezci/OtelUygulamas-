@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Business.Abstract;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ShopApp.webui.EmailServices;
 using teknofest.Identity;
@@ -12,11 +13,14 @@ namespace teknofest.Controllers
         private UserManager<User> _userManager; //kullanıcı oluşturma falan login
         private SignInManager<User> _signInManager;//seession ve cookie
         private IEmailSender _emailSender;
-        public AccountController(IEmailSender emailSender , UserManager<User> userManager , SignInManager<User> signInManager)
+
+        private ICartService _cartService;
+        public AccountController(IEmailSender emailSender , UserManager<User> userManager , SignInManager<User> signInManager , ICartService cartService)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _emailSender = emailSender;
+            _cartService = cartService;
         }
         public IActionResult Login()
         {
@@ -39,11 +43,13 @@ namespace teknofest.Controllers
                 return View();
             }
 
-            if(!await _userManager.IsEmailConfirmedAsync(user))
-            {
-                ModelState.AddModelError("", "Lütfen mail hesabınızı onaylayın!");
-                return View();
-            }
+            //web projesi için gerekli değil ancak teknofest icin ilerde burası acilacak!
+
+            //if(!await _userManager.IsEmailConfirmedAsync(user))
+            //{
+            //    ModelState.AddModelError("", "Lütfen mail hesabınızı onaylayın!");
+            //    return View();
+            //}
 
             var result = await _signInManager.PasswordSignInAsync(user , model.Password , true ,false);
             if(result.Succeeded)
@@ -83,6 +89,9 @@ namespace teknofest.Controllers
                 var url = Url.Action("ConfirmEmail", "Account", new { userid = user.Id, token = token });
                 //email 
                 await _emailSender.SendEmailAsync(model.Email, "Hesabınızı onaylayınız", $"lütfen email hesabınızı onaylamak için linke <a href='https://localhost:7220{url}' >tıklayınız.</a>");
+
+                //kullanıcıya sepet oluşturma
+                _cartService.InitializeCart(user.Id);
 
                 return RedirectToAction("Login");
             }
