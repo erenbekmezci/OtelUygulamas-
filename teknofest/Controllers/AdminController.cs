@@ -146,7 +146,7 @@ namespace teknofest.Controllers
                     LastName = user.LastName,
                     Email = user.Email,
                     EmailConfirmed = user.EmailConfirmed,
-                    SelectedRoles = roles
+                    SelectedRoles = (List<string>)roles
                 });
                 
                 
@@ -175,13 +175,13 @@ namespace teknofest.Controllers
 
                     if(result.Succeeded)
                     {
-                        var userRoles = _userManager.GetRolesAsync(user);
-                 
+                        List<string>? userRoles = await _userManager.GetRolesAsync(user) as List<string>;
+                        
                         selectedRoles = selectedRoles ?? new string[] { };
 
-                        //await _userManager.AddToRolesAsync(user, selectedRoles.Except(userRoles).ToArray<string>());
-                        //await _userManager.RemoveFromRolesAsync(user, userRoles.Except(selectedRoles).ToArray<string>());
-                        return View("UserList");
+                        await _userManager.AddToRolesAsync(user, selectedRoles.Except(userRoles).ToArray<string>());
+                        await _userManager.RemoveFromRolesAsync(user, userRoles.Except(selectedRoles).ToArray<string>());
+                        return RedirectToAction("UserList");
 
 
                     }

@@ -21,7 +21,7 @@ namespace teknofest.Models
         public string Email { get; set; }
         public bool EmailConfirmed { get; set; }
 
-        public IEnumerable<string>? SelectedRoles { get; set; }
+        public List<string>? SelectedRoles { get; set; }
 
     }
 }
