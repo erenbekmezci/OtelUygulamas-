@@ -19,21 +19,28 @@
                 <li class="nav-item">
                     <a class="nav-link" asp-controller="home" asp-action="index">Hakkýmýzda</a>
                 </li>
-                @if(User.IsInRole("Admin"))
+                @if (User.Identity.IsAuthenticated)
                 {
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="admin" asp-action="foodlist">Admin Foods</a>
+                        <a href="/cart" class="nav-link">Cart</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="admin" asp-action="foodcategorylist">Admin Food Categories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="admin" asp-action="userlist">Users</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="admin" asp-action="rolelist">Roles</a>
-                    </li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="admin" asp-action="foodlist">Admin Foods</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="admin" asp-action="foodcategorylist">Admin Food Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="admin" asp-action="userlist">Users</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="admin" asp-action="rolelist">Roles</a>
+                        </li>
+                    }
                 }
+                
                
                 
                 
