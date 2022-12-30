@@ -58,7 +58,7 @@ namespace DataAccess.Concrete.EfCore
             }
         }
 
-        public void Update(Tentity entity)
+        public virtual void Update(Tentity entity)
         {
             using (var db = new Tcontext())
             {

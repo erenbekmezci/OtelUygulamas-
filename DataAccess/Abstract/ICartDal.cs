@@ -9,6 +9,7 @@ namespace DataAccess.Abstract
 {
     public interface ICartDal : IRepository<Cart>
     {
-
+        Cart GetByUserId(string userid);
+        void DeleteFromCart(int cartid, int foodid);
     }
 }

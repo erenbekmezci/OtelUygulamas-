@@ -22,9 +22,9 @@
                 @if (User.Identity.IsAuthenticated)
                 {
                     <li class="nav-item">
-                        <a href="/cart" class="nav-link">Cart</a>
+                        <a class="nav-link" asp-controller="cart" asp-action="index">sepet</a>
                     </li>
-                    @if (User.IsInRole("Admin"))
+                    if (User.IsInRole("Admin"))
                     {
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="admin" asp-action="foodlist">Admin Foods</a>
