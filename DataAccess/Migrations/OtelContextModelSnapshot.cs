@@ -49,11 +49,7 @@ namespace DataAccess.Migrations
                     b.Property<int>("CartId")
                         .HasColumnType("integer");
 
-                    b.Property<string>("FoodId")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("FoodId1")
+                    b.Property<int>("FoodId")
                         .HasColumnType("integer");
 
                     b.Property<int>("Quantity")
@@ -63,7 +59,7 @@ namespace DataAccess.Migrations
 
                     b.HasIndex("CartId");
 
-                    b.HasIndex("FoodId1");
+                    b.HasIndex("FoodId");
 
                     b.ToTable("CartItems");
                 });
@@ -146,7 +142,7 @@ namespace DataAccess.Migrations
 
                     b.HasOne("Entities.Food", "Food")
                         .WithMany()
-                        .HasForeignKey("FoodId1")
+                        .HasForeignKey("FoodId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

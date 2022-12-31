@@ -10,6 +10,8 @@ using System.Configuration;
 using ShopApp.webui.EmailServices;
 using Business.Abstract;
 using Business.Concrete;
+using Microsoft.Extensions.Configuration;
+using teknofest.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,11 +37,11 @@ IConfiguration Configuration = new ConfigurationBuilder()
 builder.Services.Configure<IdentityOptions>(options =>
 {
     // Password settings.
-    options.Password.RequireDigit = true;
-    options.Password.RequireLowercase = true;
-    options.Password.RequireNonAlphanumeric = true; //_@* vs
-    options.Password.RequireUppercase = true;
-    options.Password.RequiredLength = 6;
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireNonAlphanumeric = false; //_@* vs
+    options.Password.RequireUppercase = false;
+    options.Password.RequiredLength = 3;
 
 
     // Lockout settings. //hesabýn kilitlenmesi olaylarý
@@ -111,21 +113,25 @@ app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>
 {
-   endpoints.MapControllerRoute(
-       name : "foodcategorydetails",
-       pattern : "{url}",
-       defaults : new {Controller = "Menu" , Action = "Details" } 
-       );
 
-
-    
-   
 
     endpoints.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+    endpoints.MapControllerRoute(
+       name : "foodcategorydetails",
+       pattern : "{url}",
+       defaults : new {Controller = "Menu" , Action = "Details" }
+    );
 });
 
+
+//admin ekleme 
+//var userManager = app.Services.GetService<UserManager<User>>();
+
+//var roleManager = app.Services.GetService<RoleManager<IdentityRole>>();
+//SeedIdentity.Seed(userManager ,roleManager, Configuration).Wait();
 
 
 app.Run();

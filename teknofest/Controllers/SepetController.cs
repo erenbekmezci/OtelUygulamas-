@@ -6,12 +6,12 @@ using teknofest.Models;
 
 namespace teknofest.Controllers
 {
-    public class CartController : Controller
+    public class SepetController : Controller
     {
         private ICartService _cartService;
 
         private UserManager<User> _userManager;
-        public CartController(ICartService cartService, UserManager<User> userManager)
+        public SepetController(ICartService cartService, UserManager<User> userManager)
         {
             _cartService = cartService;
             _userManager = userManager;

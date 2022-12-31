@@ -13,7 +13,7 @@ using teknofest.Models;
 
 namespace teknofest.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private IFoodDal _foodService;

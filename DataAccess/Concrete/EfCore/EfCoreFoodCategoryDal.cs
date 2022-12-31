@@ -26,7 +26,7 @@ namespace DataAccess.Concrete.EfCore
         {
             using (var context = new OtelContext())
             {
-                return context.FoodCategories.Where(i => i.Url == categoryName).Include(i => i.Foods).First();
+                return context.FoodCategories.Where(i => i.Url == categoryName).Include(i => i.Foods).FirstOrDefault();
             }
         }
     }
