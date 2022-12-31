@@ -8,7 +8,11 @@
         <span>@Model.Description</span>
     </div>
     <div class="card-footer text-center">
-        
+        <form method="post" asp-action="AddToCart" asp-controller="Cart" style="display:inline">
+            <input type="hidden" name="foodid" value="@Model.Id" />
+            <input type="hidden" name="quantity" value="1" />
+            <button type="submit" class="btn btn-primary btn-sm">Add to Cart</button>
+        </form>
 
     </div>
 </div>   

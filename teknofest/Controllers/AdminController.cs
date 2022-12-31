@@ -13,7 +13,7 @@ using teknofest.Models;
 
 namespace teknofest.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "admin")]
     public class AdminController : Controller
     {
         private IFoodDal _foodService;
@@ -126,6 +126,24 @@ namespace teknofest.Controllers
             return RedirectToAction("EditRole");
         }
 
+        [HttpPost]
+        public async Task<IActionResult> DeleteRole(string RoleId)
+        {
+            var role = await _roleManager.FindByIdAsync(RoleId);
+
+            if(role != null)
+            {
+                var result = await _roleManager.DeleteAsync(role);
+
+                if(result.Succeeded)
+                {
+                   return RedirectToAction("RoleList");
+                }
+            }
+            return RedirectToAction("RoleList");
+
+        }
+
         public IActionResult UserList()
         {
             return View(_userManager.Users);
@@ -196,6 +214,22 @@ namespace teknofest.Controllers
             ViewBag.roles2 = roles;
             return View(model);
 
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteUserAsync(string UserId)
+        {
+            var user =  await _userManager.FindByIdAsync(UserId);
+            if (user != null)
+            {
+                var result = await _userManager.DeleteAsync(user);
+                if(result.Succeeded)
+                {
+                    return RedirectToAction("UserList");
+                }
+            }
+            return RedirectToAction("UserList");
+            
         }
 
 

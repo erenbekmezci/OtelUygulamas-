@@ -24,10 +24,10 @@
                 @if (User.Identity.IsAuthenticated)
                 {
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="sepet" asp-action="index">sepet</a>
+                        <a class="nav-link" asp-controller="cart" asp-action="index">sepet</a>
                     </li>
                     
-                    if (User.IsInRole("Admin"))
+                    if (User.IsInRole("admin"))
                     {
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="admin" asp-action="foodlist">Admin Foods</a>
