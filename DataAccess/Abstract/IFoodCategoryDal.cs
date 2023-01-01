@@ -13,8 +13,7 @@ namespace DataAccess.Abstract
 
         FoodCategory GetByIdWithFoods(int id);
 
-       
-
+        List<FoodCategory> getYemekMenu();
 
     }
 }

@@ -24,6 +24,19 @@ namespace teknofest.Controllers
             return View(foodCategories);
         }
 
+        public IActionResult YemekMenu()
+        {
+            return View(_service.getYemekMenu());
+        }
+        public IActionResult IcecekMenu()
+        {
+            return View(_service.GetAll(i=> i.Name.Contains("içecek")));
+        }
+        public IActionResult TatliMenu()
+        {
+            return View(_service.GetAll(i => i.Name.Contains("Tatlı")));
+        }
+
         public IActionResult Details(string url)
         {
             return View(_service.GetFoodsTheCategory(url));

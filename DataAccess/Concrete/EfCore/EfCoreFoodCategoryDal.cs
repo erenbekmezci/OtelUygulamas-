@@ -29,5 +29,23 @@ namespace DataAccess.Concrete.EfCore
                 return context.FoodCategories.Where(i => i.Url == categoryName).Include(i => i.Foods).FirstOrDefault();
             }
         }
+
+        public List<FoodCategory> getYemekMenu()
+        {
+            using(var context = new OtelContext())
+            {
+                var menu = context.FoodCategories.ToList();
+                for (int i = 0; i < menu.Count; i++)
+                {
+                    if (menu[i].Name.Contains("içecek") || menu[i].Name.Contains("Tatlı"))
+                    {
+                        menu.Remove(menu[i]);
+                    }
+                  
+                }
+                return menu;
+                    
+            }
+        }
     }
 }

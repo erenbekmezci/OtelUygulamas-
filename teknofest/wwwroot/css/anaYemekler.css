@@ -1,0 +1,91 @@
+
+.menu {
+    padding: 35px, 45px, 35px, 45px;
+    margin: 35px auto;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.food {
+    width: 29%;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(rgb(161, 132, 68,1),rgba(161, 132, 68,0.4));
+    margin: 20px auto;
+}
+
+
+.food img {
+    position: relative;
+    width: 100%;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.details {
+    padding: 20px 10px;
+    display: grid;
+    grid-template-rows: auto 1fr 10px;
+    grid-row-gap: 15px;
+}
+
+
+.details-sub {
+    display: block;
+    grid-template-columns: auto auto;
+}
+
+.details-sub h5{
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.food-price {
+    text-align: right;
+}
+
+.details p {
+    text-align: center;
+    font-size: 15px;
+    line-height: 28px;
+    font-weight: 400;
+    align-self: stretch;
+    color: #ffffff;
+}
+
+.add-basket {
+    text-align: center;
+}
+
+.details button {
+    margin: auto ;
+    background-color: #cb202d;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 100;
+    border-radius: 50px;
+    width: 75%;
+}
+
+@media screen and (max-width: 925px) {
+
+    .menu {
+        flex-wrap: wrap;
+    }
+
+    .food {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    
+/* ----- içerik ----- */    
+    
+    .food {
+        width: 75%;
+    }
+}

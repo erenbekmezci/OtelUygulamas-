@@ -1,6 +1,7 @@
 ﻿using DataAccess.Abstract;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace teknofest.ViewComponents
 {
@@ -15,9 +16,9 @@ namespace teknofest.ViewComponents
 
         public IViewComponentResult Invoke()
         {
-            if (RouteData.Values["url"] != null)
-                ViewBag.SelectedCategory = RouteData.Values["url"];
-            return View(_service.GetAll());
+            //if (RouteData.Values["url"] != null)
+            //    ViewBag.SelectedCategory = RouteData.Values["url"];
+            return View(_service.getYemekMenu());
         }
     }
 }

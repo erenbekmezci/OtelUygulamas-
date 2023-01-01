@@ -18,16 +18,16 @@ namespace teknofest.Controllers
 
         public IActionResult Index()
         {
-            var foodCategories = new FoodCategoryList()
-            {
-
-                FoodCategories = service.GetAll()
-
-
-
-            };
-            return View(foodCategories);
+            return View();
         }
+
+        public IActionResult Hizmet()
+        {
+            
+            return View();
+        }
+
+
 
         public IActionResult Privacy()
         {

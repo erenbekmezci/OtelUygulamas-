@@ -1,12 +1,10 @@
 ﻿@model FoodCategory
-<partial name="_header" />
 
 
 
-<div class="row">
 
-    <div class="col-md-12">
-        <div class="row">
+
+   
             @foreach (var food in Model.Foods)
             {
                 <div class="col-md-4 col-sm-2">
@@ -14,9 +12,25 @@
                 </div>
             }
 
-            
+                
 
+
+
+<div class="food">
+    <div class="details">
+        <div class="img">
+            <img src="img/gazoz.jpg" alt="">
+        </div>
+        <div class="details-sub">
+            <div class="food-name">
+                <h5>Gazoz</h5>
+            </div>
+            <div class="food-price">
+                <h5>10TL</h5>
+            </div>
+            <div class="add-basket">
+                <button>Sepete Ekle</button>
+            </div>
         </div>
     </div>
 </div>
-
