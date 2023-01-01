@@ -37,7 +37,7 @@ namespace DataAccess.Concrete.EfCore
                 var menu = context.FoodCategories.ToList();
                 for (int i = 0; i < menu.Count; i++)
                 {
-                    if (menu[i].Name.Contains("içecek") || menu[i].Name.Contains("Tatlı"))
+                    if (menu[i].Name.Contains("içecek") || menu[i].Name.Contains("tatlılar") || menu[i].Name.Contains("Tatlı"))
                     {
                         menu.Remove(menu[i]);
                     }

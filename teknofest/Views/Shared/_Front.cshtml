@@ -20,6 +20,11 @@
         <div class="top-items">
             @if(User.Identity.IsAuthenticated)
             {
+
+                <a >
+                    Welcome @User.Identity.Name
+                    <i class="icon ion-md-person"></i>
+                </a>
                 <a class="login" href="/account/logout">
                     Çıkış
                     <i class="icon ion-md-person"></i>
@@ -38,13 +43,17 @@
             }
             
             <hr>
-            <a class="lang" href="#">Dil
+            
+            @*<a asp-controller="navbar" asp-action="ChangeLanguage" asp-route-culture="en-US" class="lang">
+                Dil
                 <i class="icon ion-md-flag"></i>
-            </a>
+            </a>*@
         </div>
 
         <div class="top-view">
-            <h3>AnaSayfa</h3>
+            <span><a asp-controller="navbar" asp-action="ChangeLanguage" asp-route-culture="en-US" class="lang">En</a></span>
+            <span><a asp-controller="navbar" asp-action="ChangeLanguage" asp-route-culture="tr-TR" class="lang">TR</a></span>
+
         </div>
 
         <partial name="_header" />
@@ -69,12 +78,15 @@
 
         
        
-
-        <div class="sepet">
-            <i class="icon ion-md-basket">
-                Sepet
-            </i>
-        </div>
+    @if(User.Identity.IsAuthenticated)
+    {
+            <div class="sepet">
+                <i class="icon ion-md-basket">
+                    <a href="/cart/index">Sepet</a>
+                </i>
+            </div>
+    }
+        
 
         <div class="footer">
             <div class="footer-content">

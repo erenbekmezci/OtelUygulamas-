@@ -12,6 +12,11 @@ using Business.Abstract;
 using Business.Concrete;
 using Microsoft.Extensions.Configuration;
 using teknofest.Controllers;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.CodeAnalysis.Host;
+using System.Globalization;
+using System.Reflection;
+using teknofest.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,7 +30,47 @@ IConfiguration Configuration = new ConfigurationBuilder()
                             .AddJsonFile("appsettings.json")
                             .Build();
 
+//dil
+builder.Services.AddSingleton<LanguageService>();
 
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+builder.Services.AddMvc()
+    .AddViewLocalization()
+    .AddDataAnnotationsLocalization(options =>
+    {
+        options.DataAnnotationLocalizerProvider = (type, factory) =>
+        {
+
+            var assemblyName = new AssemblyName(typeof(ShareResource).GetTypeInfo().Assembly.FullName);
+
+            return factory.Create("ShareResource", assemblyName.Name);
+
+        };
+
+    });
+
+
+
+builder.Services.Configure<RequestLocalizationOptions>(
+    options =>
+    {
+        var supportedCultures = new List<CultureInfo>
+            {
+                            new CultureInfo("en-US"),
+                            new CultureInfo("tr-TR"),
+            };
+
+
+
+        options.DefaultRequestCulture = new RequestCulture(culture: "tr-TR", uiCulture: "tr-TR");
+
+        options.SupportedCultures = supportedCultures;
+        options.SupportedUICultures = supportedCultures;
+        options.RequestCultureProviders.Insert(0, new QueryStringRequestCultureProvider());
+
+    }
+);
 
 
 
@@ -107,6 +152,11 @@ else
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+//dil
+app.UseRequestLocalization();
+
+
+
 app.UseRouting();
 app.UseAuthentication(); //identity midile ware
 app.UseAuthorization();
@@ -115,16 +165,19 @@ app.UseEndpoints(endpoints =>
 {
 
 
+
    
-    endpoints.MapControllerRoute(
-       name: "foodcategorydetails",
-       pattern: "{url}",
-       defaults: new { Controller = "Menu", Action = "Details" }
-    );
 
     endpoints.MapControllerRoute(
    name: "default",
    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+    endpoints.MapControllerRoute(
+      name: "foodcategorydetails",
+      pattern: "{url}",
+      defaults: new { Controller = "Menu", Action = "Details" }
+   );
+
 
 });
 

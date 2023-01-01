@@ -1,11 +1,14 @@
 ﻿using Business.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using teknofest.Identity;
 using teknofest.Models;
 
 namespace teknofest.Controllers
 {
+    [Authorize]
     public class CartController : Controller
     {
         private ICartService _cartService;

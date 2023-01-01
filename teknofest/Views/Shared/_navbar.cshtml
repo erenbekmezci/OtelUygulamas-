@@ -1,80 +1,84 @@
+
+@inject LanguageService language
+
 <div class="navbar-frame">
     <div class="navbar ">
-                <nav class = 'd-flex'>
-                    <div class="menu-icons">
-                        <i class="icon ion-md-menu"></i>
-                        <i class="icon ion-md-backspace"></i>
-                    </div>
-
-                    <div class="logo">
-                        <a href="mainPage.html">
-                            <i class="icon ion-md-restaurant"></i>
-                        </a>
-                    </div>
-                    
-                    <div class="nav-list">
-                        <ul class="nav-list-ul">
-                            <li>
-                                <a href="/Home/Index">Ana Sayfa</a>
-                            </li>
-                            <li>
-                                <a href="/menu/yemekmenu">Yemek Menüleri<i class="icon ion-md-arrow-dropdown"></i></a>
-                                <ul class="sub-menu">
-                                  @await Component.InvokeAsync("MenuCategory")
-                                    
-                                    
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="/menu/icecekmenu">Ýçecekler<i class="icon ion-md-arrow-dropdown"></i></a>
-                                <ul class="sub-menu">
-                                  @await Component.InvokeAsync("DrinksCategorycs")
-
-
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="/menu/tatlimenu">Tatlýlar<i class="icon ion-md-arrow-dropdown"></i></a>
-                                <ul class="sub-menu">
-                                    @await Component.InvokeAsync("TatliCategory")
-
-
-                                </ul>
-                                
-                            </li>
-                            @if(User.IsInRole("admin"))
-                            {
-                                <li>
-                                    <a href="/Admin/UserList">Admin<i class="icon ion-md-arrow-dropdown"></i></a>
-
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a href="/admin/foodlist">
-                                                Foods</a>
-                                        </li>
-                                        <li>
-                                            <a href="/admin/foodcategorylist">Food Categories</a>
-                                        </li>
-                                        <li>
-                                            <a href="/admin/userlist">Users List</a>
-                                        </li>
-                                        <li>
-                                            <a href="/admin/rolelist">Admin List</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                             }
-
-                           
-                            
-                            <li>
-                                <a href="/home/hizmet">Hizmetlerimiz</a>
-                            </li>
-                           
-                           
-                            
-                        </ul>
-                    </div>
-                </nav>
+        <nav class='d-flex'>
+            <div class="menu-icons">
+                <i class="icon ion-md-menu"></i>
+                <i class="icon ion-md-backspace"></i>
             </div>
-        </div>
+
+            <div class="logo">
+                <a href="/home/index">
+                    <i class="icon ion-md-restaurant"></i>
+                </a>
+            </div>
+
+            <div class="nav-list">
+                <ul class="nav-list-ul">
+                    <li>
+                        <a href="/Home/Index">@language.GetKey("anaSayfa")</a>
+                    </li>
+                    <li>
+                        <a href="/menu/yemekmenu">@language.GetKey("yemekMenü")<i class="icon ion-md-arrow-dropdown"></i></a>
+                        <ul class="sub-menu">
+                            @await Component.InvokeAsync("MenuCategory")
+
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/menu/icecekmenu">@language.GetKey("içecekler")<i class="icon ion-md-arrow-dropdown"></i></a>
+                        <ul class="sub-menu">
+                            @await Component.InvokeAsync("DrinksCategorycs")
+
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/menu/tatlimenu">@language.GetKey("tatlýlar")<i class="icon ion-md-arrow-dropdown"></i></a>
+                        <ul class="sub-menu">
+                            @await Component.InvokeAsync("TatliCategory")
+
+
+                        </ul>
+
+                    </li>
+                    @if (User.IsInRole("admin"))
+                    {
+                        <li>
+                            <a href="/Admin/UserList">Admin<i class="icon ion-md-arrow-dropdown"></i></a>
+
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="/admin/foodlist">
+                                        Foods
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/admin/foodcategorylist">Food Categories</a>
+                                </li>
+                                <li>
+                                    <a href="/admin/userlist">Users List</a>
+                                </li>
+                                <li>
+                                    <a href="/admin/rolelist">Role List</a>
+                                </li>
+                            </ul>
+                        </li>
+                    }
+
+
+
+                    <li>
+                        <a href="/home/hizmet">@language.GetKey("hizmetlerimiz")</a>
+                    </li>
+
+
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
