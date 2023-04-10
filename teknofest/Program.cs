@@ -146,7 +146,7 @@ if (!app.Environment.IsDevelopment())
 else
 {
     app.UseDeveloperExceptionPage();
-    SeedDatabase.Seed();
+    //SeedDatabase.Seed();
 }
 
 app.UseHttpsRedirection();

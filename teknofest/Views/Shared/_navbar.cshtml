@@ -37,12 +37,10 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="/menu/tatlimenu">@language.GetKey("tatlýlar")<i class="icon ion-md-arrow-dropdown"></i></a>
-                        <ul class="sub-menu">
-                            @await Component.InvokeAsync("TatliCategory")
+                        <a href="/tatlilar">@language.GetKey("tatlýlar")</a>
 
+                        
 
-                        </ul>
 
                     </li>
                     @if (User.IsInRole("admin"))

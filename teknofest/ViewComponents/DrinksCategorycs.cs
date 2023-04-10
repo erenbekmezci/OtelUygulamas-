@@ -16,7 +16,7 @@ namespace teknofest.ViewComponents
         public IViewComponentResult Invoke()
         {
           
-            return View(_service.GetAll(i=> i.Name.Contains("içecek") || i.Name.Contains("Içecek") || i.Name.Contains("icecek")));
+            return View(_service.GetAll(i=> i.Name.Contains("içecek") || i.Name.Contains("Içecek") || i.Name.Contains("icecek") || i.Name.Contains("İçecek")));
         }
     }
 }
