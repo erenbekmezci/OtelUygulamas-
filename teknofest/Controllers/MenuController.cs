@@ -30,7 +30,7 @@ namespace teknofest.Controllers
         }
         public IActionResult IcecekMenu()
         {
-            return View(_service.GetAll(i=> i.Name.Contains("içecek")));
+            return View(_service.GetAll(i=> i.Url.Contains("icecek")));
         }
         
 

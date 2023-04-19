@@ -26,25 +26,35 @@ namespace DataAccess.Concrete.EfCore
         {
             using (var context = new OtelContext())
             {
-                return context.FoodCategories.Where(i => i.Url == categoryName).Include(i => i.Foods).FirstOrDefault();
+                return context.FoodCategories.Where(i => i.Url == categoryName).Include(i => i.Foods).First();
             }
         }
 
         public List<FoodCategory> getYemekMenu()
         {
-            using(var context = new OtelContext())
+            using (var context = new OtelContext())
             {
+                var a = new List<FoodCategory>();
                 var menu = context.FoodCategories.ToList();
                 for (int i = 0; i < menu.Count; i++)
                 {
-                    if (menu[i].Name.Contains("içecek") || menu[i].Name.Contains("tatlılar") || menu[i].Name.Contains("Tatlı"))
+                    if (menu[i].Url == "sicak-icecek" || menu[i].Url == "soguk-icecek")
                     {
                         menu.Remove(menu[i]);
                     }
-                  
-                }
-                return menu;
+                    else if (menu[i].Url == "tatli")
+                    {
+                        menu.Remove(menu[i]);
+                    }
+                    else
+                    {
+                        a.Add(menu[i]);
+                    }
                     
+
+                }
+                return a;
+
             }
         }
     }
