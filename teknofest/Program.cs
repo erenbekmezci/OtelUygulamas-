@@ -123,15 +123,10 @@ builder.Services.AddScoped<IFoodCategoryDal , EfCoreFoodCategoryDal>();
 builder.Services.AddScoped<ICartDal , EfCoreCartDal>();
 
 
+
+
 builder.Services.AddScoped<ICartService , CartManager>();
 
-builder.Services.AddScoped<IEmailSender, SmtpEmailSender>(i=>
-    new SmtpEmailSender(Configuration["EmailSender:Host"],
-                Configuration.GetValue<int>("EmailSender:Port"),
-                Configuration.GetValue<bool>("EmailSender:EnableSSL"),
-                Configuration["EmailSender:UserName"],
-                Configuration["EmailSender:Password"])
-);
 
 
 var app = builder.Build();
@@ -148,6 +143,7 @@ else
     app.UseDeveloperExceptionPage();
     //SeedDatabase.Seed();
 }
+//seed datalarý ayarla
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

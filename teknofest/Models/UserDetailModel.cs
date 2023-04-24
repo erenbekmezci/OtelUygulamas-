@@ -20,6 +20,8 @@ namespace teknofest.Models
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
         public bool EmailConfirmed { get; set; }
+       
+       
 
         public List<string>? SelectedRoles { get; set; }
 

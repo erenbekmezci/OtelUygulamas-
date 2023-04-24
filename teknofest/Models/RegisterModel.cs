@@ -27,5 +27,9 @@ namespace teknofest.Models
         [Compare("Password")]
         public string RePassword { get; set; }
 
+        [Required]
+        [Display(Name = "Oda Numaranız", Prompt = "Oda Numaranızı Giriniz")]
+        public int OdaNumarasi { get; set; }
+
     }
 }
