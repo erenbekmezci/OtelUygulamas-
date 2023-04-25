@@ -120,11 +120,77 @@
   <data name="anaSayfa" xml:space="preserve">
     <value>Ana Sayfa</value>
   </data>
+  <data name="anasayfaResim" xml:space="preserve">
+    <value>İstanbul tarihi ve kültürel mirası, muhteşem manzaraları ve harika yemekleri ile ziyaretçilerini cezbediyor</value>
+  </data>
+  <data name="anaYemekler" xml:space="preserve">
+    <value>Ana Yemekler</value>
+  </data>
+  <data name="dil" xml:space="preserve">
+    <value>Dil</value>
+  </data>
+  <data name="giris" xml:space="preserve">
+    <value>Giriş</value>
+  </data>
+  <data name="hakkımızda" xml:space="preserve">
+    <value>Hakkımızda</value>
+  </data>
   <data name="hizmetlerimiz" xml:space="preserve">
     <value>Hizmetlerimiz</value>
   </data>
   <data name="içecekler" xml:space="preserve">
     <value>İçecekler</value>
+  </data>
+  <data name="kahvaltı" xml:space="preserve">
+    <value>Kahvaltılıklar</value>
+  </data>
+  <data name="poolH2" xml:space="preserve">
+    <value>Deniz Manzaralı Havuzumuzda Rahatlayın</value>
+  </data>
+  <data name="poolLi1" xml:space="preserve">
+    <value>Havuzumuz 24 saat hizmet vermektedir.</value>
+  </data>
+  <data name="poolLi2" xml:space="preserve">
+    <value>Havuzumuzda içecek servisi mevcuttur.</value>
+  </data>
+  <data name="poolLi3" xml:space="preserve">
+    <value>Havuzumuz, otelin en üst katında yer almaktadır ve muhteşem bir deniz manzarasına sahiptir.</value>
+  </data>
+  <data name="poolP" xml:space="preserve">
+    <value>Yorgunluğunuzu atmak için en iyi yer, deniz manzaralı havuzumuzdur. Havuzumuzda yüzerek, güneşlenerek ya da sadece kitabınızı okuyarak rahatlayabilirsiniz.</value>
+  </data>
+  <data name="salata" xml:space="preserve">
+    <value>Salatalar</value>
+  </data>
+  <data name="sepetEkle" xml:space="preserve">
+    <value>Sepete Ekle</value>
+  </data>
+  <data name="sogukIcecek" xml:space="preserve">
+    <value>Soğuk İçecekler</value>
+  </data>
+  <data name="spaButton" xml:space="preserve">
+    <value>Rezervasyon için ____-____-__-__</value>
+  </data>
+  <data name="spaH2" xml:space="preserve">
+    <value>Şehrin Stresinden Uzaklaşın</value>
+  </data>
+  <data name="spaLi1" xml:space="preserve">
+    <value>Yüz bakımı</value>
+  </data>
+  <data name="spaLi2" xml:space="preserve">
+    <value>Vücut masajı</value>
+  </data>
+  <data name="spaLi3" xml:space="preserve">
+    <value>Refleksoloji</value>
+  </data>
+  <data name="spaLi4" xml:space="preserve">
+    <value>Ve daha fazlası</value>
+  </data>
+  <data name="spaP" xml:space="preserve">
+    <value>Deneyimli terapistlerimizle birlikte kendinizi yenileyin</value>
+  </data>
+  <data name="sıcakİçecek" xml:space="preserve">
+    <value>Sıcak İçecekler</value>
   </data>
   <data name="tatlılar" xml:space="preserve">
     <value>Tatlılar</value>

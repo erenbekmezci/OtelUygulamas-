@@ -1,36 +1,37 @@
-﻿<link rel="stylesheet" href="~/css/ourServices.css">
+﻿@inject LanguageService language
+<link rel="stylesheet" href="~/css/ourServices.css">
 
 <div class="menu">
     <div class="spa-container">
         <div class="spa-info">
-            <h2>Şehrin Stresinden Uzaklaşın</h2>
+            <h2>@language.GetKey("spaH2")</h2>
             <div class="spa-image">
-                <img src="img/spa.jpg" alt="Spa">
+                <img src="~/img/spa.jpg" alt="Spa">
             </div>
-            <p>Deneyimli terapistlerimizle birlikte kendinizi şımartın ve yenilenin.</p>
+            <p>@language.GetKey("spaP")</p>
             <hr>
             <ul>
-                <li>-Yüz bakımı</li>
-                <li>-Vücut masajı</li>
-                <li>-Refleksoloji</li>
-                <li>-Ve daha fazlası</li>
+                <li>@language.GetKey("spaLi1")</li>
+                <li>@language.GetKey("spaLi2")</li>
+                <li>@language.GetKey("spaLi3")</li>
+                <li>@language.GetKey("spaLi4")</li>
             </ul>
-            <button>Rezervasyon için ___-___-__-__</button>
+            <button>@language.GetKey("spaButton")</button>
         </div>
     </div>
 
     <div class="pool-container">
         <div class="pool-info">
-            <h2>Deniz Manzaralı Havuzumuzda Rahatlayın</h2>
+            <h2>@language.GetKey("poolH2")</h2>
             <div class="pool-image">
-                <img src="img/havuz2.jpg" alt="Havuz Resmi">
+                <img src="~/img/havuz2.jpg" alt="Havuz Resmi">
             </div>
-            <p>Yorgunluğunuzu atmak için en iyi yer, deniz manzaralı havuzumuzdur. Havuzumuzda yüzerek, güneşlenerek ya da sadece kitabınızı okuyarak rahatlayabilirsiniz.</p>
+            <p>@language.GetKey("poolP")</p>
             <hr>
             <ul>
-                <li>-Havuzumuz 24 saat hizmet vermektedir.</li>
-                <li>-Havuzumuzda içecek servisi mevcuttur.</li>
-                <li>-Havuzumuz, otelin en üst katında yer almaktadır ve muhteşem bir deniz manzarasına sahiptir.</li>
+                <li>@language.GetKey("poolLi1")</li>
+                <li>@language.GetKey("poolLi2")</li>
+                <li>@language.GetKey("poolLi3")</li>
             </ul>
         </div>
     </div>

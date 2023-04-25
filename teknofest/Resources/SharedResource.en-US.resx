@@ -120,11 +120,77 @@
   <data name="anaSayfa" xml:space="preserve">
     <value>Main Page</value>
   </data>
+  <data name="anasayfaResim" xml:space="preserve">
+    <value>Istanbul attracts visitors with its historical and cultural heritage, magnificent landscapes and great food.</value>
+  </data>
+  <data name="anaYemekler" xml:space="preserve">
+    <value>Main Courses</value>
+  </data>
+  <data name="dil" xml:space="preserve">
+    <value>Lang</value>
+  </data>
+  <data name="giris" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="hakkımızda" xml:space="preserve">
+    <value>About us</value>
+  </data>
   <data name="hizmetlerimiz" xml:space="preserve">
     <value>Our Service</value>
   </data>
   <data name="içecekler" xml:space="preserve">
     <value>Drinks</value>
+  </data>
+  <data name="kahvaltı" xml:space="preserve">
+    <value>Breakfast</value>
+  </data>
+  <data name="poolH2" xml:space="preserve">
+    <value>Relax in our sea view pool</value>
+  </data>
+  <data name="poolLi1" xml:space="preserve">
+    <value>Our pool is open 24 hours.</value>
+  </data>
+  <data name="poolLi2" xml:space="preserve">
+    <value>Beverage service is available in our pool.</value>
+  </data>
+  <data name="poolLi3" xml:space="preserve">
+    <value>Our pool is located on the top floor of the hotel and has a magnificent sea view.</value>
+  </data>
+  <data name="poolP" xml:space="preserve">
+    <value>The best place to relieve your tiredness is our pool with sea view. You can relax in our pool by swimming, sunbathing or just reading your book.</value>
+  </data>
+  <data name="salata" xml:space="preserve">
+    <value>Salads</value>
+  </data>
+  <data name="sepetEkle" xml:space="preserve">
+    <value>Add Basket</value>
+  </data>
+  <data name="sogukIcecek" xml:space="preserve">
+    <value>Cold Drinks</value>
+  </data>
+  <data name="spaButton" xml:space="preserve">
+    <value>For reservation ____-____-__-__</value>
+  </data>
+  <data name="spaH2" xml:space="preserve">
+    <value>Get away from the stress of the city</value>
+  </data>
+  <data name="spaLi1" xml:space="preserve">
+    <value>Skin care</value>
+  </data>
+  <data name="spaLi2" xml:space="preserve">
+    <value>Body massage</value>
+  </data>
+  <data name="spaLi3" xml:space="preserve">
+    <value>Reflexology</value>
+  </data>
+  <data name="spaLi4" xml:space="preserve">
+    <value>And more</value>
+  </data>
+  <data name="spaP" xml:space="preserve">
+    <value>Refresh yourself with our experienced therapists</value>
+  </data>
+  <data name="sıcakİçecek" xml:space="preserve">
+    <value>Hot Drinks</value>
   </data>
   <data name="tatlılar" xml:space="preserve">
     <value>Deserts</value>
