@@ -1,10 +1,11 @@
 ﻿@model LoginModel
-
+<link rel="stylesheet" href="~/css/login.css">
+<script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
 @{
     ViewData["Title"] = "LoginModel";
 }
 
-<h1>Login</h1>
+@*<h1>Login</h1>
 
 <h4>Login</h4>
 <hr />
@@ -40,8 +41,35 @@
 
         
     </div>
-</div>
+</div>*@
 
+
+<div class="login-frame">
+    <span class="icon-close">
+        <a href="mainPage.html"><ion-icon name="arrow-back-outline"></ion-icon></a>
+    </span>
+
+    <div class="login-in">
+        <h2>
+            Giriş
+        </h2>
+        <div class="input-box">
+            <input class="input" type="text" name="" placeholder="Kullanıcı Adı Giriniz" id="username">
+
+        </div>
+        <div class="input-box">
+            <input class="input" type="password" name="" placeholder="Şifre Giriniz" id="password">
+        </div>
+
+        <input type="submit" name="" value="Login" id="submit">
+
+        <div class="kayit">
+            <a href="register.html">Kayıt Oluştur</a>
+        </div>
+
+
+    </div>
+</div>
 
 
 @section Scripts {

@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     
+    
+
+
+
 
 </head>
 <body>
@@ -32,29 +36,37 @@
             }
             else
             {
-                <a class="login" href="/account/login">
-                    Giriş
-                    <i class="icon ion-md-person"></i>
-                </a>
-                <a class="login" href="/account/register">
-                    Kayıt Ol
-                    <i class="icon ion-md-person"></i>
-                </a>
+                <div class="login">
+                    <a href="/account/login">
+                        Giriş
+                        <i class="icon ion-md-person"></i>
+                    </a>
+                </div>
+               
             }
+            <div class="lang">
+                <button class="langBut">Dil <i class="icon ion-md-flag"></i></button>
+                <div class="dropdown">
+                    <a asp-controller="navbar" asp-action="ChangeLanguage" asp-route-culture="en-US" >En</a>
+                    <br>
+                    <a asp-controller="navbar" asp-action="ChangeLanguage" asp-route-culture="tr-TR" >TR</a>
+                </div>
+            </div>
+           
             
-            <hr>
-            
-            @*<a asp-controller="navbar" asp-action="ChangeLanguage" asp-route-culture="en-US" class="lang">
-                Dil
-                <i class="icon ion-md-flag"></i>
-            </a>*@
+      
         </div>
 
-        <div class="top-view">
+
+     
+
+
+
+        @*<div class="top-view">
             <span><a asp-controller="navbar" asp-action="ChangeLanguage" asp-route-culture="en-US" class="lang">En</a></span>
             <span><a asp-controller="navbar" asp-action="ChangeLanguage" asp-route-culture="tr-TR" class="lang">TR</a></span>
 
-        </div>
+        </div>*@
 
         <partial name="_header" />
         

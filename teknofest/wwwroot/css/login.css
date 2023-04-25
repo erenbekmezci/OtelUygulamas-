@@ -2,31 +2,108 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background: url(/img/loginBack2.jpg);
+    background: url(../img/loginBack3.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
 }
 
-.box {
-    width: 350px;
-    height: 300px;
+.login-frame {
+    width: 300px;
+    height: 340px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background: rgba(0, 0, 0, 0.7);
-    text-align: center;
-    border-radius: 20%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-.box h1 {
-    color: #ffc400ec;
-    font-weight: 700;
-} 
+.login-in {
+    width: 100%;
+    padding: 40px;
+}
 
-#username, #password {
+.login-in h2 {
+    font-size: 2em;
+    color: #162938;
+    text-align: center;
+}
+
+.register-frame {
+    width: 300px;
+    height: 420px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.register-in {
+    width: 100%;
+    padding: 40px;
+}
+
+.register-in h2 {
+    font-size: 2em;
+    color: #162938;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+::placeholder {
+    color: rgb(2, 1, 7);
+    opacity: 50%;
+}
+
+.icon-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+/*
+.input {
     border: 0;
     background: none;
     display: block;
@@ -41,22 +118,29 @@ body {
     transition: 0.25px;
 }
 
-#username:focus, #password:focus {
+.input:focus {
     width: 270px;
     border-color: #ffc400ec;
 }
-
+*/
 #submit {
-    border: 0;
-    background: none;
-    display: block;
-    margin: 20px auto;
-    text-align: center;
-    border: 3px solid #ffc400ec;
-    padding: 14px 10px;
+    width: 100%;
+    height: 45px;
+    border: none;
+    background: #162938;
     outline: none;
-    color: white;
-    border-radius: 24px;
-    transition: 0.25px;
+    border-radius: 6px;
     cursor: pointer;
+    font-size: 1em;
+    color: white;   
+}
+
+.kayit {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.kayit a {
+    
+    color: #fff;
 }

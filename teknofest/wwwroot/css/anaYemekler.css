@@ -2,7 +2,7 @@
 .menu {
     padding: 35px, 45px, 35px, 45px;
     margin: 35px auto;
-    width: 80%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -10,16 +10,17 @@
 .food {
     width: 29%;
     border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(rgb(161, 132, 68,1),rgba(161, 132, 68,0.4));
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(rgb(221, 215, 202),rgba(161, 132, 68,0.4));
     margin: 20px auto;
+    border: 2px solid rgba(177, 177, 177, 0.5);
 }
 
 
 .food img {
-    position: relative;
+    position:relative;
     width: 100%;
-    border-radius: 15px 15px 15px 15px;
+    border-radius: 15px;
 }
 
 .details {
@@ -36,14 +37,15 @@
 }
 
 .details-sub h5{
-    text-align: center;
+    float: left;
+    text-align: left;
     font-weight: 600;
     font-size: 18px;
-    color: #ffffff;
+    color: #886e6e;
 }
 
 .food-price {
-    text-align: right;
+    float: right;
 }
 
 .details p {
@@ -56,12 +58,13 @@
 }
 
 .add-basket {
+    padding: 50px 0 0 0;
     text-align: center;
 }
 
 .details button {
     margin: auto ;
-    background-color: #cb202d;
+    background-color: #867070;
     border: none;
     color: #ffffff;
     font-size: 20px;
@@ -70,10 +73,21 @@
     width: 75%;
 }
 
+
+
 @media screen and (max-width: 925px) {
 
     .menu {
         flex-wrap: wrap;
+        
+    }
+
+    .menu h5 {
+        font-size: 15px;
+    }
+
+    .menu button {
+        font-size: 18px;
     }
 
     .food {

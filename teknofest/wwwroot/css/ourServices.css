@@ -1,0 +1,156 @@
+/* ********* spa & masaj ********* */
+
+.spa-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+@media (min-width: 768px) {
+  .spa-container {
+    flex-direction: row;
+  }
+}
+
+.spa-image {
+  margin-bottom: 30px;
+}
+
+.spa-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.spa-info h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #867070;
+}
+
+.spa-info p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #867070;
+}
+
+.spa-info ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.spa-info ul li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #867070;
+}
+
+.spa-info button {
+  background-color: #E4D0D0;
+  color: #867070;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.spa-info button:hover {
+  background-color: #C7B1B1;
+}
+
+@media (min-width: 768px) {
+  .spa-image {
+    flex: 1;
+    margin-right: 50px;
+    margin-bottom: 0;
+  }
+
+  .spa-info {
+    flex: 1;
+  }
+}
+
+/* ********* havuz ********* */
+
+
+.pool-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+@media (min-width: 768px) {
+  .pool-container {
+    flex-direction: row;
+  }
+}
+
+.pool-image {
+  margin-bottom: 30px;
+}
+
+.pool-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.pool-info h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #867070;
+}
+
+.pool-info p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #867070;
+}
+
+.pool-info ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.pool-info ul li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #867070;
+}
+
+.pool-info button {
+  background-color: #E4D0D0;
+  color: #867070;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pool-info button:hover {
+  background-color: #C7B1B1;
+}
+
+@media (min-width: 768px) {
+  .pool-image {
+    flex: 1;
+    margin-right: 50px;
+    margin-bottom: 0;
+  }
+
+  .pool-info {
+    flex: 1;
+  }
+}
