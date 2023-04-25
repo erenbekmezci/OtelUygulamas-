@@ -1,8 +1,9 @@
 ﻿@model LoginModel
-<link rel="stylesheet" href="~/css/login.css">
+
 <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
 @{
     ViewData["Title"] = "LoginModel";
+    Layout = null;
 }
 
 @*<h1>Login</h1>
@@ -44,32 +45,59 @@
 </div>*@
 
 
-<div class="login-frame">
-    <span class="icon-close">
-        <a href="mainPage.html"><ion-icon name="arrow-back-outline"></ion-icon></a>
-    </span>
-
-    <div class="login-in">
-        <h2>
-            Giriş
-        </h2>
-        <div class="input-box">
-            <input class="input" type="text" name="" placeholder="Kullanıcı Adı Giriniz" id="username">
-
-        </div>
-        <div class="input-box">
-            <input class="input" type="password" name="" placeholder="Şifre Giriniz" id="password">
-        </div>
-
-        <input type="submit" name="" value="Login" id="submit">
-
-        <div class="kayit">
-            <a href="register.html">Kayıt Oluştur</a>
-        </div>
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+    <link rel="stylesheet" href="~/css/login.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
+</head>
+<body>
+    <div class="login-frame">
+        <span class="icon-close">
+            <a href="/home/index"><ion-icon name="arrow-back-outline"></ion-icon></a>
+        </span>
+          <form asp-action="Login" method="post">
+            <div class="login-in">
+                <h2>
+                    Giriş
+                </h2>
+                <div class="input-box">
+                    @*<input class="input" type="text" name="" placeholder="Kullanıcı Adı Giriniz" id="username">*@
+                    <input asp-for="Email" class="input" placeholder="Şifre Giriniz"  />
+
+                </div>
+                <div class="input-box">
+                    @*<input class="input" type="password" name="" placeholder="Şifre Giriniz" id="password">*@
+                    <input asp-for="Password" class="input" placeholder="Şifre Giriniz"  />
+                </div>
+
+                <input type="submit" name="" value="Login" id="submit">
+                <div class="kayit">
+                    <a href="/account/register">Kayıt Oluştur</a>
+                </div>
+            </div>
+        </form>
+                
+       
+            
+       
+        
+
+        
     </div>
-</div>
+</body>
+</html>
+
+
 
 
 @section Scripts {
