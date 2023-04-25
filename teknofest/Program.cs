@@ -121,11 +121,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IFoodDal, EfCoreFoodDal>();
 builder.Services.AddScoped<IFoodCategoryDal , EfCoreFoodCategoryDal>();
 builder.Services.AddScoped<ICartDal , EfCoreCartDal>();
-
+builder.Services.AddScoped<IOrderRepository, EfCoreOrderRepository>();
 
 
 
 builder.Services.AddScoped<ICartService , CartManager>();
+builder.Services.AddScoped<IOrderService, OrderManager>();
 
 
 

@@ -17,6 +17,10 @@ namespace Entities
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string Telefon { get; set; }
+        public EnumPaymentType PaymentType { get; set; }
+        public EnumOrderState OrderState { get; set; }
+        
     }
 
     public enum EnumPaymentType

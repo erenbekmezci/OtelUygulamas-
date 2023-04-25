@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    public interface ICartDal : IRepository<Cart>
+    public interface IOrderRepository : IRepository<Order>
     {
-        Cart GetByUserId(string userid);
-        void DeleteFromCart(int cartid, int foodid);
-        void ClearCart(int cartId);
-
+        List<Order> GetOrders(string userId);
     }
 }

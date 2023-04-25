@@ -16,5 +16,7 @@ namespace Business.Abstract
         void AddToCart(string userid, int foodid, int quantity);
 
         void DeleteFromCart(string userid, int foodid);
+
+        void ClearCart(int cartId);
     }
 }

@@ -58,5 +58,10 @@ namespace Business.Concrete
         {
             return _cartDal.GetByUserId(userId);
         }
+
+        public void ClearCart(int cartId)
+        {
+            _cartDal.ClearCart(cartId);
+        }
     }
 }
