@@ -1,10 +1,11 @@
-﻿<div class="menu">
+﻿@inject LanguageService language
+<div class="menu">
 
     <div class="cityImg">
         <div class="image-overlay">
             <img src="img/istanbul2.jpg" alt="İstanbul Boğazı manzarası">
             <div class="overlay-text">
-                <p>İstanbul tarihi ve kültürel mirası, muhteşem manzaraları ve harika yemekleri ile ziyaretçilerini cezbediyor.</p>
+                <p>@language.GetKey("anasayfaResim")</p>
             </div>
         </div>
     </div>
@@ -18,10 +19,55 @@
             </div>
             <div class="details-sub">
                 <div class="go-link">
-                    <a href="/home/hizmet">Hizmetlerimiz</a>
+                    <a href="/home/hizmet">@language.GetKey("hizmetlerimiz")</a>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="category cat">
+        <div class="details">
+            <div class="img">
+                <img src="~/img/Hizmetlerimiz.jpg" alt="">
+            </div>
+            <div class="details-sub">
+                <div class="go-link">
+                    <a href="/menu/yemekmenu">@language.GetKey("yemekMenü")</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="category cat">
+        <div class="details">
+            <div class="img">
+                <img src="~/img/Hizmetlerimiz.jpg" alt="">
+            </div>
+            <div class="details-sub">
+                <div class="go-link">
+                    <a href="/tatli">@language.GetKey("tatlılar")</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="category cat">
+        <div class="details">
+            <div class="img">
+                <img src="~/img/Hizmetlerimiz.jpg" alt="">
+            </div>
+            <div class="details-sub">
+                <div class="go-link">
+                    <a href="/menu/icecekmenu">@language.GetKey("içecekler")</a>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
     
