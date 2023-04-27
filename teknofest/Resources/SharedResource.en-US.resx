@@ -165,6 +165,9 @@
   <data name="sepetEkle" xml:space="preserve">
     <value>Add Basket</value>
   </data>
+  <data name="siparislerim" xml:space="preserve">
+    <value>Orders</value>
+  </data>
   <data name="sogukIcecek" xml:space="preserve">
     <value>Cold Drinks</value>
   </data>

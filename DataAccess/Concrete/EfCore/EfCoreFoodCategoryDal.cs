@@ -40,11 +40,11 @@ namespace DataAccess.Concrete.EfCore
                 {
                     if (menu[i].Url == "sicak-icecek" || menu[i].Url == "soguk-icecek")
                     {
-                        menu.Remove(menu[i]);
+                        //menu.Remove(menu[i]);
                     }
                     else if (menu[i].Url == "tatli")
                     {
-                        menu.Remove(menu[i]);
+                        //menu.Remove(menu[i]);
                     }
                     else
                     {

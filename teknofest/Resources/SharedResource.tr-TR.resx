@@ -165,6 +165,9 @@
   <data name="sepetEkle" xml:space="preserve">
     <value>Sepete Ekle</value>
   </data>
+  <data name="siparislerim" xml:space="preserve">
+    <value>Siparişlerim</value>
+  </data>
   <data name="sogukIcecek" xml:space="preserve">
     <value>Soğuk İçecekler</value>
   </data>
