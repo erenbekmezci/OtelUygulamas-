@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(OtelContext))]
-    [Migration("20230424234753_order_sayfasi2")]
-    partial class ordersayfasi2
+    [Migration("20230427195626_eren1")]
+    partial class eren1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

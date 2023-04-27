@@ -1,7 +1,6 @@
 ﻿using Business.Abstract;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using ShopApp.webui.EmailServices;
 using teknofest.Identity;
 using teknofest.Models;
 

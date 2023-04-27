@@ -2,11 +2,11 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-attachment: fixed;
-    background-position: center;
-    background-image: url(..//img//loginBack3.jpg);
+    background: url(../img/loginBack3.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .login-frame {
@@ -39,7 +39,7 @@ body {
 
 .register-frame {
     width: 300px;
-    height: 700px;
+    height: 420px;
     position: absolute;
     top: 50%;
     left: 50%;

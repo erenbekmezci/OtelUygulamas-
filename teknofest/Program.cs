@@ -7,7 +7,6 @@ using Microsoft.Extensions.FileSystemGlobbing.Internal.Patterns;
 using teknofest.Identity;
 using Microsoft.AspNetCore.Hosting;
 using System.Configuration;
-using ShopApp.webui.EmailServices;
 using Business.Abstract;
 using Business.Concrete;
 using Microsoft.Extensions.Configuration;
