@@ -46,7 +46,7 @@ showCode.addEventListener('click', (e) => {
         codeWrapper.style.display = "block";
         codeShown = true;
     } else {
-        window.location.href = "mainPage.html"; // index.html yerine ana sayfanýn URL'sini yazýn
+        window.location.href = "/home/index"; // index.html yerine ana sayfanýn URL'sini yazýn
     }
 
 });
